@@ -1,0 +1,30 @@
+@mixin flex($justify: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@mixin input {
+    border-radius: 12px;
+    background: rgb(43, 36, 64);
+    font-weight: 600;
+    line-height: 19px;
+    color: #f5f5f5;
+    border: 2px solid rgba(255, 88, 95, 0.35);
+    padding: 14px;
+}
+
+@mixin button {
+    border-radius: 12px;
+    background: linear-gradient(132.76deg, rgb(255, 88, 95) 3.283%,rgb(250, 88, 151) 95.346%);
+    font-size: 17px;
+    line-height: 21px;
+    color: #fff;
+    padding: 12px 30px;
+    cursor: pointer;
+    margin-left: auto;
+
+    &:hover {
+        background: linear-gradient(132.76deg, rgb(210, 21, 30) 3.283%,rgb(163, 63, 102) 95.346%);
+    }
+}
