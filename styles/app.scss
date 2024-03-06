@@ -176,9 +176,7 @@ h1 {
         align-items: flex-end;
     }
 
-    &__select {
-        flex-grow: 1;
-    }
+    
     &__icon {
         @include flex;
         background: #2b2440;
@@ -323,7 +321,7 @@ h1 {
 
     &-titles {
         @include flex(start);
-        column-gap: 19px;
+        column-gap: 10px;
     }
 
     &-title {
