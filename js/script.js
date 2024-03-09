@@ -1,11 +1,9 @@
 import variables from "./variables.js";
 import state from "./state.js";
+import { handleChange } from "./convert.js";
+
 
 const {selects, success} = variables
-
-const handleChange = ({target: {value}}) => {
-    console.log(value)
-}
 
 const renderList = () => {
     selects.forEach(select => {
@@ -20,7 +18,7 @@ const renderList = () => {
 }  
 
 
-const fetchCodes = async () => {
+export const fetchCodes = async () => {
     try {
         const response = await fetch(`${state.url}/codes`)
         const data = await response.json()
@@ -34,5 +32,5 @@ const fetchCodes = async () => {
     }
 }
 
-fetchCodes()
+
    
