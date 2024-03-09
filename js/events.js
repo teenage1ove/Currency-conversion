@@ -1,9 +1,11 @@
-import { handleInput } from "./convert";
-import { fetchCodes } from "./script";
-import variables from "./variables";
+import { handleInput, handleSubmit } from "./convert.js";
+import { fetchCodes } from "./script.js";
+import variables from "./variables.js";
 
-const {amountInput} = variables
+const {amountInput,form} = variables
 
 fetchCodes()
 
 amountInput.addEventListener('keyup', handleInput)
+
+form.addEventListener('submit', handleSubmit)

@@ -4,5 +4,7 @@ export default {
     pair: {
         from: "",
         to: ""
-    }
+    },
+    amount: "",
+    loading: false
 }

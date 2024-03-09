@@ -1,5 +1,6 @@
 export default {
     success: "success",
     selects: document.querySelectorAll('.select'),
-    amountInpunt: document.getElementById('amount')
+    amountInput: document.getElementById('amount'),
+    form: document.querySelector(".form")
 }
