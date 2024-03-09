@@ -1,4 +1,4 @@
 export default {
     success: "success",
-    select: document.querySelectorAll('.select')
+    selects: document.querySelectorAll('.select')
 }
