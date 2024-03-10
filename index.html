@@ -14,14 +14,14 @@
             <div class="main">
                 <div class="wrapper">
                     <div class="tabs">
-                        <div class="tab active">
+                        <div class="tab active" data-tab="convert">
                             <div class="tab__icon">
                                 <img src="imgs/convert.svg" alt="">
                             </div>
                             <div class="tab-title">Convert</div>
                         </div>
 
-                        <div class="tab">
+                        <div class="tab" data-tab="single">
                             <div class="tab__icon">
                                 <img src="imgs/single.svg" alt="">
                             </div>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
 
-                    <div class="content">
+                    <div class="content show" data-child="convert">
                         <form class="form">
                             <div class="form__inputs">
                                 <div class="form__group">
@@ -85,7 +85,7 @@
                         </form>
                     </div>
 
-                    <div class="content">
+                    <div class="content" data-child="single">
                         <div class="currency-wrapper">
                             <div class="currency-single">
                                 <select class="select" id="singleSelect">

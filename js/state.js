@@ -6,5 +6,6 @@ export default {
         to: ""
     },
     amount: "",
-    loading: false
+    loading: false,
+    currentTab: 'convert'
 }
