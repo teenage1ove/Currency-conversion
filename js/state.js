@@ -1,5 +1,5 @@
 export default {
-    url: `https://v6.exchangerate-api.com/v6/b2df385f56725d03c3eca3bb`,
+    url: `https://v6.exchangerate-api.com/v6/b7b5abf8395257e9b149ce41`,
     codes: [],
     pair: {
         from: "",
