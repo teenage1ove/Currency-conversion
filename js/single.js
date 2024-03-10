@@ -14,6 +14,7 @@ const insertCurrencies = () => {
 
     currentCurrency.innerHTML = renderCurrencyItem(currency)
 
+    currentCurrencyList.innerHTML = ''
     Object.entries(rates).forEach(([code,rate]) => {
         if (code === baseCode || !currencies.includes(code)) return
         insertCurrency({...currency, code, rate})
@@ -41,6 +42,15 @@ export const fetchLatest = async() => {
 const removeCurrency = (target) => {
     const parent = target.parentElement.parentElement
     const {item} = parent.dataset
+
+    if(!item) return
+
+    const element = document.querySelector(`[data-item="${item}"]`)
+    element.remove()
+}
+
+const changeCurrency = () => {
+    currentCurrency.parentElement.classList.add('active')
 }
 
 export const handleActionClick = ({target}) => {
@@ -49,6 +59,33 @@ export const handleActionClick = ({target}) => {
     if (!action) return
 
     const {actions: {remove}} = state
-    action === remove ? removeCurrency(target) : () => {}
+    action === remove ? removeCurrency(target) : changeCurrency()
+}
 
+export const handleSingleSelectChange = ({target}) => {
+    target.parentElement.classList.remove('active')
+    state.currency = {...state.currency, code: target.value}
+    fetchLatest()
+    target.value = ''
+}
+
+export const addCurrency = ({currentTarget}) => {
+    currentTarget.parentElement.classList.add('active')
+}
+
+export const handleAddSelectChange = ({target}) => {
+    const { currency: {conversion_rates: rates, base_code: baseCode } } = state
+
+    const currency = Object.entries(rates).find(([key]) => 
+        key === target.value && key !== baseCode
+    )
+
+    if (currency) {
+        const [code, amount] = currency
+        insertCurrency({...state.currency, code , rate: amount})
+    }
+
+    target.parentElement.classList.remove('active')
+    target.value = ''
+    
 }

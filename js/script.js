@@ -14,7 +14,9 @@ const renderList = () => {
             element.innerText = code
             select.insertAdjacentElement('beforeend', element)
         })
-        select.addEventListener('change',handleChange)
+
+        const name = select.getAttribute('name')
+        name && select.addEventListener('change',handleChange)
     })
 }  
 

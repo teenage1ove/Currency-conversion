@@ -358,8 +358,8 @@ h1 {
 .currency-single .select {
   display: none;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
   right: 15px;
   width: calc(100% - 20px);
   max-width: 290px;
