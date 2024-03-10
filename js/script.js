@@ -1,6 +1,7 @@
 import variables from "./variables.js";
 import state from "./state.js";
 import { handleChange } from "./convert.js";
+import { fetchLatest } from "./single.js";
 
 
 const {selects, success, tabs} = variables
@@ -25,7 +26,8 @@ export const fetchCodes = async () => {
         
         if (data.result === success) {
             state.codes = data.supported_codes
-            renderList() 
+            renderList()
+            fetchLatest()
         }
     } catch (err) {
         console.log(err)

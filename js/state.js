@@ -7,5 +7,13 @@ export default {
     },
     amount: "",
     loading: false,
-    currentTab: 'convert'
+    currentTab: 'convert',
+    currency: {
+        code: 'USD',
+    },
+    currencies: ["USD","EUR","RUB"],
+    actions: {
+        remove: 'remove',
+        change: 'change',
+    },
 }
